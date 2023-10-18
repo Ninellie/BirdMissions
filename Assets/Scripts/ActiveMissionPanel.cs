@@ -13,6 +13,8 @@ public class ActiveMissionPanel : MonoBehaviour
     {
         var data = _repository.GetActiveMissionData();
         _inMissionText.text = data.InMissionText;
+        _allyTeamText.text = $"Союзники \r\n \r\n {data.AllyTeamText}";
+        _enemyTeamText.text = $"Противники \r\n \r\n {data.EnemyTeamText}";
     }
 
     public void Open()

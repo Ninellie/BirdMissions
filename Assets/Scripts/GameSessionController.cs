@@ -78,23 +78,22 @@ public class GameSessionController : MonoBehaviour
 
     private void MakeMissionChanges(MissionData activeMissionData)
     {
-        foreach (var variantId in activeMissionData.VariantId)
-        {
-            _repository.SetMissionState(variantId, MissionState.Blocked);
-        }
-
         foreach (var nextMissionId in activeMissionData.NextMissionsId)
         {
             var nextMissionData = _repository.GetMissionData(nextMissionId);
-            if (nextMissionData.State == MissionState.Locked)
+            if (nextMissionData.State != MissionState.Locked) continue;
+            _repository.SetMissionState(nextMissionData.Id, MissionState.Unlocked);
+            foreach (var variantId in nextMissionData.VariantId)
             {
-                _repository.SetMissionState(nextMissionData.Id, MissionState.Unlocked);
+                _repository.SetMissionState(variantId, MissionState.Blocked);
             }
         }
+
         if (activeMissionData.PairId != activeMissionData.Id)
         {
             _repository.SetMissionState(activeMissionData.PairId, MissionState.Locked);
         }
+
         _repository.SetMissionState(activeMissionData.Id, MissionState.Passed);
     }
 

@@ -50,6 +50,8 @@ MonoBehaviour:
     \u0441\u0442\u0430\u0440\u044B\u0439 \u0421\u043E\u0432\u0443\u0445, \u043D\u043E
     \u043E\u043D \u0441\u043F\u0438\u0442 \u0433\u043B\u0443\u0431\u043E\u043A\u043E
     \u0432 \u0427\u0430\u0449\u0435."
+  _allyTeamText: "\u0421\u043E\u0432\u044B"
+  _enemyTeamText: "\u0412\u043E\u0440\u043E\u043D\u044B"
   _unlockedHero: 0
   _selectedHeroPoints: 5
   _heroPoints:

@@ -101,7 +101,7 @@ public class MapPanel : MonoBehaviour
                 mission.transform.localScale = new Vector2(_notActiveMissionScale, _notActiveMissionScale);
                 break;
             case MissionState.Blocked:
-                mission.gameObject.SetActive(false);
+                mission.Block();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

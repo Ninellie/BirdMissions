@@ -42,19 +42,15 @@ public class Mission : MonoBehaviour, IPointerClickHandler
     //public void SetMissionsManager(MapMissionsManager value) => _missionsManager = value;
     public void SetNextMissions(List<Transform> missions) => _nextMission = missions;
     public void SetPair(Transform pair) => _pair = pair;
+
+    public void Block()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (_state != MissionState.Unlocked) return;
-        
-
-
         _UIController.SelectMission(_id);
-
-        //_oldUiController.SelectMission(_id);
-        //_oldUiController.UpdateInfo();
-        //_oldUiController.PullOutPreMissionPanel();
-        //_oldUiController.PullOutHeroPanel();
-
-        // _UIController.ShowInfo
     }
 }

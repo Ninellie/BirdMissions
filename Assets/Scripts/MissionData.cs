@@ -21,6 +21,8 @@ public class MissionData : ScriptableObject
     [SerializeField] private Vector2 _mapCoordinates;
     [SerializeField] private string _preMissionText;
     [SerializeField] private string _inMissionText;
+    [SerializeField] private string _allyTeamText;
+    [SerializeField] private string _enemyTeamText;
     [SerializeField] private int _unlockedHero;
     [SerializeField] private int _selectedHeroPoints;
     [SerializeField] private List<HeroPointsData> _heroPoints;
@@ -42,4 +44,8 @@ public class MissionData : ScriptableObject
         get => _missionState;
         set => _missionState = value;
     }
+
+    public string AllyTeamText => _allyTeamText;
+
+    public string EnemyTeamText => _enemyTeamText;
 }
