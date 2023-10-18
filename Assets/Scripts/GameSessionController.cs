@@ -73,6 +73,8 @@ public class GameSessionController : MonoBehaviour
 
     private void UnlockHero(MissionData data)
     {
+        if (data.UnlockedHero == 0) return;
+        if (_repository.GetHeroData(data.UnlockedHero).State != HeroState.Locked) return;
         _repository.SetHeroState(data.UnlockedHero, HeroState.Unlocked);
     }
 

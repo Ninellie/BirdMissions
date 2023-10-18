@@ -9,6 +9,7 @@ public class HeroIcon : MonoBehaviour, IPointerClickHandler
     public TMP_Text _heroName;
     public TMP_Text _points;
     public HeroState _state;
+    public Image _heroPortrait;
     public Image _heroIcon;
     
     public HeroPanel _heroPanel;

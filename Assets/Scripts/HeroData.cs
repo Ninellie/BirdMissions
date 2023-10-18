@@ -14,7 +14,7 @@ public class HeroData : ScriptableObject
     [SerializeField] private string _heroName;
     [SerializeField] private int _points;
     [SerializeField] private HeroState _state;
-    //[SerializeField] private Texture2D _portrait;
+    [SerializeField] private Sprite _portrait;
 
     public int Id => _id;
     public string HeroName => _heroName;
@@ -28,5 +28,11 @@ public class HeroData : ScriptableObject
     {
         get => _state;
         set => _state = value;
+    }
+
+    public Sprite Portrait
+    {
+        get => _portrait;
+        set => _portrait = value;
     }
 }

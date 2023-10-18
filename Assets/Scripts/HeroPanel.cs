@@ -43,6 +43,7 @@ public class HeroPanel : MonoBehaviour
             heroIcon._heroName.text = heroData.HeroName;
             heroIcon._points.text = heroData.Points.ToString();
             heroIcon._state = heroData.State;
+            heroIcon._heroPortrait.sprite = heroData.Portrait;
             heroIcon._heroPanel = this;
             SetHeroState(heroIcon, heroData.State);
             _heroIcons.Add(heroIcon);
@@ -73,12 +74,15 @@ public class HeroPanel : MonoBehaviour
         {
             case HeroState.Active:
                 heroIcon._heroIcon.color = _selectedColor;
+                heroIcon._heroPortrait.color = Color.white;
                 break;
             case HeroState.Unlocked:
                 heroIcon._heroIcon.color = _unlockedColor;
+                heroIcon._heroPortrait.color = Color.white;
                 break;
             case HeroState.Locked:
                 heroIcon._heroIcon.color = _lockedColor;
+                heroIcon._heroPortrait.color = _lockedColor;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(state), state, null);

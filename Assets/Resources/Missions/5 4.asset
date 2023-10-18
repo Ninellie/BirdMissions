@@ -42,7 +42,7 @@ MonoBehaviour:
     \u0430 \u0447\u044C\u0451-\u0442\u043E \u0434\u0435\u044F\u043D\u0438\u0435!"
   _allyTeamText: "\u0427\u0430\u0439\u043A\u0438"
   _enemyTeamText: "\u0427\u0430\u0439\u043A\u0438"
-  _unlockedHero: 2
+  _unlockedHero: 0
   _selectedHeroPoints: 5
   _heroPoints: []
-  _missionState: 3
+  _missionState: 1

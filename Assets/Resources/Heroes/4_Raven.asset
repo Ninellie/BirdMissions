@@ -16,3 +16,4 @@ MonoBehaviour:
   _heroName: "\u0412\u043E\u0440\u043E\u043D"
   _points: 0
   _state: 2
+  _portrait: {fileID: 21300000, guid: d10b30f11acd79640ba74d53f1ff7719, type: 3}
