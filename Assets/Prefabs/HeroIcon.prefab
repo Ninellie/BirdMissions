@@ -382,7 +382,7 @@ MonoBehaviour:
   _points: {fileID: 4488923890660659554}
   _state: 0
   _heroPortrait: {fileID: 8342393311183096017}
-  _heroIcon: {fileID: 4258336337262124102}
+  _heroImage: {fileID: 4258336337262124102}
   _heroPanel: {fileID: 0}
 --- !u!1 &7177365052867922369
 GameObject:
