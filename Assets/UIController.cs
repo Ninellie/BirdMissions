@@ -13,27 +13,19 @@ public class UIController : MonoBehaviour
     public void Init()
     {
         _mapPanel.ConstructMap();
+        _heroPanel.ConstructHeroes();
     }
 
-    public void UpdateMap()
-    { 
-        _mapPanel.UpdateMap();
-    }
+    public void UpdateMap() => _mapPanel.UpdateMap();
 
-    public void UpdateHeroes()
-    {
-        _heroPanel.UpdateHeroIcons();
-    }
+    public void UpdateHeroes() => _heroPanel.UpdateHeroIcons();
+
+    public void OpenInfoPanel() => _missionInfoPanel.Open();
 
     public void UpdateInfo()
     {
         _missionInfoPanel.UpdateInfo();
         _activeMissionPanel.UpdateInfo();
-    }
-
-    public void ShowInfoPanel()
-    {
-        _missionInfoPanel.Open();
     }
 
     /// <summary>

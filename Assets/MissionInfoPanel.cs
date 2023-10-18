@@ -12,6 +12,12 @@ public class MissionInfoPanel : MonoBehaviour
     [SerializeField] private Button _startButton;
     [SerializeField] private RectTransform _rectTransform;
 
+    [SerializeField] private float _openingDuration = 0.5f;
+    [SerializeField] private Ease _openingEase = Ease.OutCirc;
+
+    [SerializeField] private float _closingDuration = 0.5f;
+    [SerializeField] private Ease _closingEase = Ease.OutCirc;
+
     public void UpdateInfo()
     {
         var data = _repository.GetActiveMissionData();
@@ -21,13 +27,12 @@ public class MissionInfoPanel : MonoBehaviour
 
     public void Open()
     {
-        _rectTransform.DOAnchorPosX(_rectTransform.rect.width, 1).SetEase(Ease.OutCirc).OnComplete(()=> _startButton.interactable = true);
+        _rectTransform.DOAnchorPosX(_rectTransform.rect.width, _openingDuration).SetEase(_openingEase).OnComplete(()=> _startButton.interactable = true);
     }
 
     public void Close()
     {
         _startButton.interactable = false;
-        _rectTransform.DOAnchorPosX(0, 1).SetEase(Ease.OutCirc);
+        _rectTransform.DOAnchorPosX(0, _closingDuration).SetEase(_closingEase);
     }
-
 }

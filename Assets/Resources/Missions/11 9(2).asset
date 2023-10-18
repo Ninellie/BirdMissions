@@ -15,8 +15,8 @@ MonoBehaviour:
   _missionId: 9
   _id: 11
   _pairId: 11
-  _anyPreviousMissionForUnlock: 1
-  _previousMissionsId: 07000000
+  _variantId: 0a000000
+  _nextMissionsId: 0c000000
   _title: "\u041D\u0430\u043F\u0430\u0434\u0435\u043D\u0438\u0435 \u0410\u043D\u0442\u0430\u0433\u043E\u043D\u0438\u0441\u0442\u0430"
   _mapCoordinates: {x: 0, y: 1}
   _preMissionText: "\u0412\u043D\u0435\u0437\u0430\u043F\u043D\u043E \u043D\u0430
@@ -57,4 +57,4 @@ MonoBehaviour:
   _unlockedHero: 4
   _selectedHeroPoints: 5
   _heroPoints: []
-  _missionState: 3
+  _missionState: 1

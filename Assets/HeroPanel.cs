@@ -8,7 +8,7 @@ public class HeroPanel : MonoBehaviour
 
     [SerializeField] private List<HeroIcon> _heroIcons;
     [SerializeField] private GameObject _heroIconPrefab;
-    [SerializeField] private int _initialActiveHeroId = 1;
+    
     [SerializeField] private Color _lockedColor = Color.gray;
     [SerializeField] private Color _unlockedColor = Color.white;
     [SerializeField] private Color _selectedColor = Color.yellow;
@@ -22,13 +22,7 @@ public class HeroPanel : MonoBehaviour
         UpdateHeroIcons();
     }
 
-    private void Start()
-    {
-        _repository.SetHeroState(_initialActiveHeroId, HeroState.Active);
-        ConstructHeroes();
-    }
-
-    private void ConstructHeroes()
+    public void ConstructHeroes()
     {
         foreach (var heroIcon in _heroIcons)
         {
@@ -37,7 +31,7 @@ public class HeroPanel : MonoBehaviour
 
         _heroIcons.Clear();
 
-        var data = _repository.GetHeroData();
+        var data = _repository.GetAllHeroData();
 
         _heroIcons = new List<HeroIcon>();
 
@@ -65,7 +59,7 @@ public class HeroPanel : MonoBehaviour
 
     private void UpdateHeroInfo(HeroIcon heroIcon)
     {
-        var heroData = _repository.GetHero(heroIcon._id);
+        var heroData = _repository.GetHeroData(heroIcon._id);
         heroIcon._points.text = heroData.Points.ToString();
         heroIcon._state = heroData.State;
         SetHeroState(heroIcon, heroData.State);

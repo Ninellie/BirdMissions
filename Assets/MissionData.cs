@@ -16,8 +16,7 @@ public class MissionData : ScriptableObject
     [SerializeField] private int _id;
     [SerializeField] private int _pairId;
     [SerializeField] private int[] _variantId;
-    [SerializeField] private bool _anyPreviousMissionForUnlock;
-    [SerializeField] private int[] _previousMissionsId;
+    [SerializeField] private int[] _nextMissionsId;
     [SerializeField] private string _title;
     [SerializeField] private Vector2 _mapCoordinates;
     [SerializeField] private string _preMissionText;
@@ -29,8 +28,8 @@ public class MissionData : ScriptableObject
 
     public int Id => _id;
     public int PairId => _pairId;
-    public bool AnyPreviousMissionForUnlock => _anyPreviousMissionForUnlock;
-    public int[] PreviousMissionsId => _previousMissionsId;
+    public int[] NextMissionsId => _nextMissionsId;
+    public int[] VariantId => _variantId;
     public string Title => _title;
     public Vector2 MapCoordinates => _mapCoordinates;
     public string PreMissionText => _preMissionText;
@@ -43,6 +42,4 @@ public class MissionData : ScriptableObject
         get => _missionState;
         set => _missionState = value;
     }
-
-    public int[] VariantId => _variantId;
 }

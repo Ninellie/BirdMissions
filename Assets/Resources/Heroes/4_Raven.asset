@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b27044152cddf6a48ae93d230dd67a6f, type: 3}
-  m_Name: Hawk
+  m_Name: 4_Raven
   m_EditorClassIdentifier: 
-  _id: 1
-  _heroName: "\u042F\u0441\u0442\u0440\u0435\u0431"
+  _id: 4
+  _heroName: "\u0412\u043E\u0440\u043E\u043D"
   _points: 0
-  _state: 0
+  _state: 2

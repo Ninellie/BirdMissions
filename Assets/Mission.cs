@@ -7,7 +7,7 @@ public class Mission : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private int _id;
     [SerializeField] private MissionState _state;
-    [SerializeField] private List<Transform> _previousMissions;
+    [SerializeField] private List<Transform> _nextMission;
     [SerializeField] private Transform _pair;
     [SerializeField] private MapPanel _UIController;
     [SerializeField] private Image _missionIcon;
@@ -27,9 +27,9 @@ public class Mission : MonoBehaviour, IPointerClickHandler
 
     private void OnDrawGizmos()
     {
-        if (_previousMissions == null) return;
+        if (_nextMission == null) return;
         Gizmos.color = Color.green;
-        foreach (var previousMission in _previousMissions)
+        foreach (var previousMission in _nextMission)
         {
             Gizmos.DrawLine(gameObject.transform.position, previousMission.position);
         }
@@ -40,7 +40,7 @@ public class Mission : MonoBehaviour, IPointerClickHandler
     //public void SetUiController(OldUIController value) => _oldUiController = value;
     public void SetMapPanel(MapPanel value) => _UIController = value;
     //public void SetMissionsManager(MapMissionsManager value) => _missionsManager = value;
-    public void SetPreviousMissions(List<Transform> missions) => _previousMissions = missions;
+    public void SetNextMissions(List<Transform> missions) => _nextMission = missions;
     public void SetPair(Transform pair) => _pair = pair;
     public void OnPointerClick(PointerEventData eventData)
     {

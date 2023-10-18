@@ -302,7 +302,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -310,14 +309,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1643,6 +1634,7 @@ MonoBehaviour:
   _repository: {fileID: 1580373585}
   _UIController: {fileID: 1703805088}
   _initialUnlockedMissionId: 1
+  _initialActiveHeroId: 1
 --- !u!1 &1436064605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,8 +1828,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fd3f611ec7e59546825cc273784d884, type: 2}
   - {fileID: 11400000, guid: 6c145e93bde58be449e399e88438792a, type: 2}
   _heroesDataList:
-  - {fileID: 11400000, guid: 24fe85362b5f2464cbb8d9049ef20b6f, type: 2}
   - {fileID: 11400000, guid: 9fe3e9113aeaa2c41a4855d2cce99484, type: 2}
+  - {fileID: 11400000, guid: 24fe85362b5f2464cbb8d9049ef20b6f, type: 2}
   - {fileID: 11400000, guid: b3ce5e5ff55037b4b92bb228d2959627, type: 2}
   - {fileID: 11400000, guid: a2e1064e904bb184bb67db648169d233, type: 2}
 --- !u!1 &1673175593
@@ -2387,7 +2379,7 @@ MonoBehaviour:
   _unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   _selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   _passedColor: {r: 0, g: 1, b: 0, a: 1}
-  _activeMissionScale: 1.5
+  _activeMissionScale: 1
   _notActiveMissionScale: 0.5
 --- !u!1 &1956289074
 GameObject:
@@ -2507,7 +2499,6 @@ MonoBehaviour:
   _repository: {fileID: 1580373585}
   _heroIcons: []
   _heroIconPrefab: {fileID: 3235964336337780869, guid: c030927dee0a6b444bbd9a2f96d3964b, type: 3}
-  _initialActiveHeroId: 1
   _lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   _selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -2634,6 +2625,10 @@ MonoBehaviour:
   _preMissionText: {fileID: 1990274574}
   _startButton: {fileID: 1837776691}
   _rectTransform: {fileID: 1960846228}
+  _openingDuration: 0.3
+  _openingEase: 3
+  _closingDuration: 0.5
+  _closingEase: 3
 --- !u!1 &1967726939
 GameObject:
   m_ObjectHideFlags: 0

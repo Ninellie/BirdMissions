@@ -15,9 +15,8 @@ public class MapPanel : MonoBehaviour
     [SerializeField] private Color _unlockedColor = Color.white;
     [SerializeField] private Color _selectedColor = Color.yellow;
     [SerializeField] private Color _passedColor = Color.green;
-    [SerializeField] private float _activeMissionScale = 1.5f;
+    [SerializeField] private float _activeMissionScale = 1f;
     [SerializeField] private float _notActiveMissionScale = 0.5f;
-
 
     /// <summary>
     /// Выполняется после прохождения миссии
@@ -31,7 +30,7 @@ public class MapPanel : MonoBehaviour
     {
         InstantiateMissions();
         ArrangeMissions();
-        SetPreviousMissions();
+        SetNextMissions();
         SetPairs();
     }
 
@@ -50,7 +49,7 @@ public class MapPanel : MonoBehaviour
 
         ActivateMission(missionId);
         _UIController.UpdateInfo();
-        _UIController.ShowInfoPanel();
+        _UIController.OpenInfoPanel();
     }
 
     private void ActivateMission(int missionId)
@@ -115,6 +114,7 @@ public class MapPanel : MonoBehaviour
         {
             Destroy(mission);
         }
+
         _missions.Clear();
         var missionIdList = _repository.GetMissionIdList();
         _missions = new List<Mission>(missionIdList.Count);
@@ -136,17 +136,20 @@ public class MapPanel : MonoBehaviour
         }
     }
 
-    private void SetPreviousMissions()
+    private void SetNextMissions()
     {
         foreach (var mission in _missions)
         {
-            var prevMissionsId = _repository.GetPreviousMissionsId(mission.Id);
-            var prevMissions = new List<Transform>();
-            foreach (var m in _missions)
+            var nextMissionsId = _repository.GetMissionData(mission.Id).NextMissionsId;
+            var nextMissionsTransform = new List<Transform>();
+            foreach (var nextMissionId in nextMissionsId)
             {
-                prevMissions.AddRange(from prevMissionId in prevMissionsId where m.Id == prevMissionId select m.transform);
+                foreach (var m in _missions.Where(m => m.Id == nextMissionId))
+                {
+                    nextMissionsTransform.Add(m.transform);
+                }
             }
-            mission.SetPreviousMissions(prevMissions);
+            mission.SetNextMissions(nextMissionsTransform);
         }
     }
 

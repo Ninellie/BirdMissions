@@ -15,8 +15,8 @@ MonoBehaviour:
   _missionId: 6
   _id: 7
   _pairId: 7
-  _anyPreviousMissionForUnlock: 1
-  _previousMissionsId: 04000000
+  _variantId: 
+  _nextMissionsId: 0b000000
   _title: "\u0420\u0435\u043A\u0440\u0443\u0442\u0438\u043D\u0433 \u0412\u043E\u0440\u043E\u043D\u0430"
   _mapCoordinates: {x: 0, y: -0.5}
   _preMissionText: "\u0421\u0435\u043C\u044C\u044F \u0412\u043E\u0440\u043E\u043D\u0430

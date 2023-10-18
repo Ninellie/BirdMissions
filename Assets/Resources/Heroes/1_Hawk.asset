@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b27044152cddf6a48ae93d230dd67a6f, type: 3}
-  m_Name: Gull
+  m_Name: 1_Hawk
   m_EditorClassIdentifier: 
-  _id: 2
-  _heroName: "\u0427\u0430\u0439\u043A\u0430"
+  _id: 1
+  _heroName: "\u042F\u0441\u0442\u0440\u0435\u0431"
   _points: 0
-  _state: 2
+  _state: 0
