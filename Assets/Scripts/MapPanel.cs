@@ -6,7 +6,7 @@ using UnityEngine;
 public class MapPanel : MonoBehaviour
 {
     [SerializeField] private UIController _UIController;
-    [SerializeField] private ScriptableObjectMissionDataRepository _repository;
+    [SerializeField] private MissionDataRepository _repository;
 
     [SerializeField] private GameObject _missionPrefab;
     [SerializeField] private List<Mission> _missions;

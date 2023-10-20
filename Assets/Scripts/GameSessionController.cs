@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GameSessionController : MonoBehaviour
 {
-    [SerializeField] private ScriptableObjectMissionDataRepository _repository;
+    [SerializeField] private MissionDataRepository _repository;
     [SerializeField] private UIController _UIController;
     [SerializeField] private int _initialUnlockedMissionId;
     [SerializeField] private int _initialActiveHeroId = 1;

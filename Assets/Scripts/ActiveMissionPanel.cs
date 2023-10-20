@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActiveMissionPanel : MonoBehaviour
 {
-    [SerializeField] private ScriptableObjectMissionDataRepository _repository;
+    [SerializeField] private MissionDataRepository _repository;
 
     [SerializeField] private TMP_Text _enemyTeamText;
     [SerializeField] private TMP_Text _allyTeamText;

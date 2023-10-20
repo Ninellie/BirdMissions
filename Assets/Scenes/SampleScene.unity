@@ -1779,6 +1779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580373584}
   - component: {fileID: 1580373585}
+  - component: {fileID: 1580373586}
   m_Layer: 0
   m_Name: '[Repository]'
   m_TagString: Untagged
@@ -1825,6 +1826,37 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76a4563cbb6571546be7b8896b3a1cb7, type: 2}
   - {fileID: 11400000, guid: b21d4aa706488cc4ca85fd6297d53f01, type: 2}
   - {fileID: 11400000, guid: 95d56dcc8d0db5a44b3740875a23c743, type: 2}
+  - {fileID: 11400000, guid: 9fd3f611ec7e59546825cc273784d884, type: 2}
+  - {fileID: 11400000, guid: 6c145e93bde58be449e399e88438792a, type: 2}
+  _heroesDataList:
+  - {fileID: 11400000, guid: 9fe3e9113aeaa2c41a4855d2cce99484, type: 2}
+  - {fileID: 11400000, guid: 24fe85362b5f2464cbb8d9049ef20b6f, type: 2}
+  - {fileID: 11400000, guid: b3ce5e5ff55037b4b92bb228d2959627, type: 2}
+  - {fileID: 11400000, guid: a2e1064e904bb184bb67db648169d233, type: 2}
+--- !u!114 &1580373586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580373583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a500f4f6dd0382419e543053570e527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _missionDataList:
+  - {fileID: 11400000, guid: c1751a936e5f67d48a867c32763aa762, type: 2}
+  - {fileID: 11400000, guid: 77fe5e85f3c54244d9118147d9446653, type: 2}
+  - {fileID: 11400000, guid: a5f8754f2f3a05d4c8c4d066420fb401, type: 2}
+  - {fileID: 11400000, guid: 455416e90bf69b14aae51e25709ca774, type: 2}
+  - {fileID: 11400000, guid: d6382083ccaf2ac4f91bb16af6a8ea21, type: 2}
+  - {fileID: 11400000, guid: 2d5e66e3771762c478afded9a43c65ad, type: 2}
+  - {fileID: 11400000, guid: 700a6c86a6ed81a4fa5a63be30cd1f8c, type: 2}
+  - {fileID: 11400000, guid: b977087abc5df37489225e7871018801, type: 2}
+  - {fileID: 11400000, guid: 76a4563cbb6571546be7b8896b3a1cb7, type: 2}
+  - {fileID: 11400000, guid: 95d56dcc8d0db5a44b3740875a23c743, type: 2}
+  - {fileID: 11400000, guid: b21d4aa706488cc4ca85fd6297d53f01, type: 2}
   - {fileID: 11400000, guid: 9fd3f611ec7e59546825cc273784d884, type: 2}
   - {fileID: 11400000, guid: 6c145e93bde58be449e399e88438792a, type: 2}
   _heroesDataList:

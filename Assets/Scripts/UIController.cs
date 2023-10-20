@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private ScriptableObjectMissionDataRepository _repository;
+    [SerializeField] private MissionDataRepository _repository;
     [SerializeField] private GameSessionController _gameSessionController;
 
     [SerializeField] private MapPanel _mapPanel;

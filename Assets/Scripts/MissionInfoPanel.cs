@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MissionInfoPanel : MonoBehaviour
 {
-    [SerializeField] private ScriptableObjectMissionDataRepository _repository;
+    [SerializeField] private MissionDataRepository _repository;
 
     [SerializeField] private TMP_Text _missionTitleText;
     [SerializeField] private TMP_Text _preMissionText;

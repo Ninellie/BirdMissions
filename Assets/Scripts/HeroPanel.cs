@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroPanel : MonoBehaviour
 {
-    [SerializeField] private ScriptableObjectMissionDataRepository _repository;
+    [SerializeField] private MissionDataRepository _repository;
 
     [SerializeField] private List<HeroIcon> _heroIcons;
     [SerializeField] private GameObject _heroIconPrefab;
