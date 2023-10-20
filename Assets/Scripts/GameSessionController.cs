@@ -143,11 +143,11 @@ public class GameSessionController : MonoBehaviour
 
         foreach (var heroPointsData in activeMissionData.HeroPoints)
         {
-            AddPointsToNonActiveHero(heroPointsData.heroId, heroPointsData.pointsAmount);
+            TryAddHeroPointsToHero(heroPointsData.heroId, heroPointsData.pointsAmount);
         }
     }
 
-    private void AddPointsToNonActiveHero(int heroId, int pointsAmount)
+    private void TryAddHeroPointsToHero(int heroId, int pointsAmount)
     {
         if (pointsAmount < 0)
         {
@@ -155,7 +155,7 @@ public class GameSessionController : MonoBehaviour
             return;
         }
 
-        if (_repository.GetHeroData(heroId).State == HeroState.Unlocked)
+        if (_repository.GetHeroData(heroId).State != HeroState.Locked)
         {
             _repository.AddHeroPointsToHero(heroId, pointsAmount);
         }
