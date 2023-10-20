@@ -12,6 +12,11 @@ public class ScriptableObjectMissionDataRepository : MonoBehaviour
         return _missionDataList.FirstOrDefault(missionData => missionData.State == MissionState.Active);
     }
 
+    public List<MissionData> GetPreviousMissionsData(int missionData)
+    {
+        return _missionDataList.Where(data => data.NextMissionsId.Any(m => m == missionData)).ToList();
+    }
+
     public MissionData GetMissionData(int missionId)
     {
         return _missionDataList.FirstOrDefault(missionData => missionData.Id == missionId);

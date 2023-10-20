@@ -17,8 +17,12 @@ MonoBehaviour:
   _pairId: 13
   _variantId: 
   _nextMissionsId: 
-  _title: "\u0424\u0435\u043D\u0438\u043A\u0441 \u043F\u0440\u043E\u0441\u043D\u0443\u043B\u0441\u044F"
+  _anyPreviousMissionForUnlock: 1
+  _selectedHeroPoints: 5
+  _unlockedHero: 0
+  _heroPoints: []
   _mapCoordinates: {x: -1, y: 4}
+  _title: "\u0424\u0435\u043D\u0438\u043A\u0441 \u043F\u0440\u043E\u0441\u043D\u0443\u043B\u0441\u044F"
   _preMissionText: "\u041A\u0430\u0437\u0430\u043B\u043E\u0441\u044C \u0431\u044B,
     \u0432\u0441\u0451 \u043F\u043E\u0442\u0435\u0440\u044F\u043D\u043E, \u043D\u043E
     \u0447\u0442\u043E \u044D\u0442\u043E? \u0418\u0437 \u043C\u0430\u0433\u0438\u0447\u0435\u0441\u043A\u043E\u0439
@@ -40,7 +44,4 @@ MonoBehaviour:
     \u043F\u043E\u043C\u043E\u0447\u044C\u2026"
   _allyTeamText: "\u041E\u0440\u043B\u044B"
   _enemyTeamText: "\u0424\u0435\u043D\u0438\u043A\u0441\u044B"
-  _unlockedHero: 0
-  _selectedHeroPoints: 5
-  _heroPoints: []
   _missionState: 1

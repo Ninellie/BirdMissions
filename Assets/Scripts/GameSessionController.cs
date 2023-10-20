@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 
 public class GameSessionController : MonoBehaviour
@@ -21,8 +24,11 @@ public class GameSessionController : MonoBehaviour
         AddHeroPoints(data);
         // Разблокировать героя
         UnlockHero(data);
+        // Блокируем пары
+        LockPairs(data);
         // Обновить состояния миссий
-        MakeMissionChanges(data);
+        TryUnlockNextMissions(data);
+        _repository.SetMissionState(data.Id, MissionState.Passed);
         // Обновить карту и панель героев
         _UIController.UpdateHeroes();
         _UIController.UpdateMap();
@@ -78,25 +84,55 @@ public class GameSessionController : MonoBehaviour
         _repository.SetHeroState(data.UnlockedHero, HeroState.Unlocked);
     }
 
-    private void MakeMissionChanges(MissionData activeMissionData)
+    private void TryUnlockNextMissions(MissionData activeMissionData)
     {
         foreach (var nextMissionId in activeMissionData.NextMissionsId)
         {
             var nextMissionData = _repository.GetMissionData(nextMissionId);
             if (nextMissionData.State != MissionState.Locked) continue;
-            _repository.SetMissionState(nextMissionData.Id, MissionState.Unlocked);
-            foreach (var variantId in nextMissionData.VariantId)
+            if (nextMissionData.AnyPreviousMissionForUnlock)
             {
-                _repository.SetMissionState(variantId, MissionState.Blocked);
+                UnlockMission(nextMissionData);
+            }
+            else
+            {
+                //var prevMissions = _repository.GetPreviousMissionsData(nextMissionId);
+                // Если хотя бы одна из предыдущих миссии следующей миссии не пройдена, ничего не делаем
+                //var unlock = prevMissions.Where(prevMission => prevMission.Id != activeMissionData.Id).All(prevMission => prevMission.State == MissionState.Passed);
+                var unlock = GetIsMissionAbleToUnlocking(nextMissionData, activeMissionData);
+                if (!unlock) continue;
+                _repository.SetMissionState(nextMissionData.Id, MissionState.Unlocked);
+                BlockVariants(nextMissionData);
             }
         }
+    }
 
-        if (activeMissionData.PairId != activeMissionData.Id)
+    private void BlockVariants(MissionData missionData)
+    {
+        foreach (var variantId in missionData.VariantId)
         {
-            _repository.SetMissionState(activeMissionData.PairId, MissionState.Locked);
+            _repository.SetMissionState(variantId, MissionState.Blocked);
         }
+    }
 
-        _repository.SetMissionState(activeMissionData.Id, MissionState.Passed);
+    private bool GetIsMissionAbleToUnlocking(MissionData missionData, MissionData activeMissionData)
+    {
+        var prevMissions = _repository.GetPreviousMissionsData(missionData.Id);
+        var unlock = prevMissions.Where(prevMission => prevMission.Id != activeMissionData.Id)
+            .All(prevMission => prevMission.State == MissionState.Passed);
+        return unlock;
+    }
+
+    private void UnlockMission(MissionData missionData)
+    {
+        _repository.SetMissionState(missionData.Id, MissionState.Unlocked);
+        BlockVariants(missionData);
+    }
+
+    private void LockPairs(MissionData activeMissionData)
+    {
+        if (activeMissionData.PairId == activeMissionData.Id) return;
+        _repository.SetMissionState(activeMissionData.PairId, MissionState.Locked);
     }
 
     private void AddHeroPoints(MissionData activeMissionData)

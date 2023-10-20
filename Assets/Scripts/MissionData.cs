@@ -13,19 +13,30 @@ public class HeroPointsData
 public class MissionData : ScriptableObject
 {
     [SerializeField] private int _missionId;
+    [Space]
+    [Header("Mission connections")]
     [SerializeField] private int _id;
     [SerializeField] private int _pairId;
     [SerializeField] private int[] _variantId;
     [SerializeField] private int[] _nextMissionsId;
-    [SerializeField] private string _title;
+    [SerializeField] private bool _anyPreviousMissionForUnlock;
+    [Space]
+    [Header("Hero parameters")]
+    [SerializeField] private int _selectedHeroPoints;
+    [SerializeField] private int _unlockedHero;
+    [SerializeField] private List<HeroPointsData> _heroPoints;
+    [Space]
+    [Header("Map position")]
     [SerializeField] private Vector2 _mapCoordinates;
+    [Space]
+    [Header("Description")]
+    [SerializeField] private string _title;
     [SerializeField] private string _preMissionText;
     [SerializeField] private string _inMissionText;
     [SerializeField] private string _allyTeamText;
     [SerializeField] private string _enemyTeamText;
-    [SerializeField] private int _unlockedHero;
-    [SerializeField] private int _selectedHeroPoints;
-    [SerializeField] private List<HeroPointsData> _heroPoints;
+    [Space]
+    [Header("Current mission status")]
     [SerializeField] private MissionState _missionState;
 
     public int Id => _id;
@@ -48,4 +59,5 @@ public class MissionData : ScriptableObject
     public string AllyTeamText => _allyTeamText;
 
     public string EnemyTeamText => _enemyTeamText;
+    public bool AnyPreviousMissionForUnlock => _anyPreviousMissionForUnlock;
 }
