@@ -37,16 +37,10 @@ public class Mission : MonoBehaviour, IPointerClickHandler
         Gizmos.DrawLine(gameObject.transform.position, _pair.position);
     }
 
-    //public void SetUiController(OldUIController value) => _oldUiController = value;
     public void SetMapPanel(MapPanel value) => _UIController = value;
-    //public void SetMissionsManager(MapMissionsManager value) => _missionsManager = value;
     public void SetNextMissions(List<Transform> missions) => _nextMission = missions;
     public void SetPair(Transform pair) => _pair = pair;
-
-    public void Block()
-    {
-        gameObject.SetActive(false);
-    }
+    public void Block() => gameObject.SetActive(false);
 
     public void OnPointerClick(PointerEventData eventData)
     {
